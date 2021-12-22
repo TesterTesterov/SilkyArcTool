@@ -19,7 +19,7 @@ Why this tool was created, if there are other tools that can work with this type
 5. Just wait until it done.
 
 ## Русский
-![image](https://user-images.githubusercontent.com/66121918/147122643-b4f02668-ab80-4fa4-b27c-9c0b99f888e1.png)
+![image](https://user-images.githubusercontent.com/66121918/147131060-480cdf33-33dd-4ffa-9aa5-035962923512.png)
 1. Запустите пакет средств (main.py иль .exe).
 2. Введите имя архива (с расширением!!!) или выберите его, нажав на кнопку "...".
 3. Введите имя директории файлов или выберите его, нажав на кнопку "...".
