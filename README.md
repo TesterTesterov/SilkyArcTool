@@ -13,8 +13,8 @@ Why this tool was created, if there are other tools that can work with this type
 ## English
 ![image](https://user-images.githubusercontent.com/66121918/147122698-36aa4d55-3d18-43ee-a86d-f2d73367be86.png)
 1. Run the tool (main.py or .exe).
-2. Print filename (with extension!!!).
-3. Print directory.
+2. Print filename (with extension!!!) or choose it by clicking on button "...".
+3. Print directory or choose it by clicking on button "...".
 4. Print "0", if thou want to unpack, or "1", if thou want to pack.
 5. Just wait until it done.
 
