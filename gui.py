@@ -296,10 +296,12 @@ mesScriptAsseAndDisassembler.
         file_name = os.path.normpath(file_name)
         if file_name != "":
             relpath = os.path.relpath(file_name, os.getcwd())
+            end_arc = file_name
             if relpath.count(os.sep) < file_name.count(os.sep):
-                self._arc_name.set(relpath)
-            else:
-                self._arc_name.set(file_name)
+                end_arc = relpath
+            self._arc_name.set(end_arc)
+            if self._dir_name.get() == "":
+                self._dir_name.set(os.path.splitext(end_arc)[0])
 
     def _choose_dir(self) -> None:
         """Choose the directory."""
@@ -307,10 +309,10 @@ mesScriptAsseAndDisassembler.
         dir_name = os.path.normpath(dir_name)
         if dir_name != "":
             relpath = os.path.relpath(dir_name, os.getcwd())
+            end_dir = dir_name
             if relpath.count(os.sep) < dir_name.count(os.sep):
-                self._dir_name.set(relpath)
-            else:
-                self._dir_name.set(dir_name)
+                end_dir = relpath
+            self._dir_name.set(end_dir)
 
     # Language methods.
 
