@@ -115,13 +115,14 @@ verbose: False (no progress messages) or True (enable progress messages)."""
                 except AssertionError:
                     print("!!! File {0} compressed size is incorrect!/Размер сжатого файла {0} некорректен!".
                           format(i[1]))
-            new_file_bytes = self.lzss_decompress(new_file_bytes)
-            if self._integrity_check:
-                try:
-                    assert len(new_file_bytes) == i[3]
-                except AssertionError:
-                    print("!!! File {0} true size is incorrect!/Истинный размер файла {0} некорректен!".
-                          format(i[1]))
+            if i[2] != i[3]:  # If the entry is encrypted...
+                new_file_bytes = self.lzss_decompress(new_file_bytes)
+                if self._integrity_check:
+                    try:
+                        assert len(new_file_bytes) == i[3]
+                    except AssertionError:
+                        print("!!! File {0} true size is incorrect!/Истинный размер файла {0} некорректен!".
+                              format(i[1]))
             with open(this_file_name, 'wb') as this_file:
                 this_file.write(new_file_bytes)
             if self._verbose:
