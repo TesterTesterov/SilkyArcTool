@@ -15,7 +15,7 @@ Why this tool was created, if there are other tools that can work with this type
 1. Run the tool (main.py or .exe).
 2. Print filename (with extension!!!) or choose it by clicking on button "...".
 3. Print directory or choose it by clicking on button "...".
-4. Print "0", if thou want to unpack, or "1", if thou want to pack.
+4. Push the button pack or "Unpack" to "Pack" or unpack.
 5. Just wait until it done.
 
 ## Русский
@@ -23,7 +23,7 @@ Why this tool was created, if there are other tools that can work with this type
 1. Запустите пакет средств (main.py иль .exe).
 2. Введите имя архива (с расширением!!!) или выберите его, нажав на кнопку "...".
 3. Введите имя директории файлов или выберите его, нажав на кнопку "...".
-4. Введите "0", коли распаковать желаете, али "1", коли запаковать желаете.
+4. Нажмите на кнопку, соответствующую желаемому действию ("Распаковать" и "Запаковать").
 5. Ждите завершения.
 
 # Tested on:
