@@ -63,9 +63,7 @@ class SilkyArcToolGUI:
 
     programm_help = {
         'eng': """
-Dual languaged (rus+eng) GUI tool for packing and unpacking archives of Silky Engine.
-This type of .arc archive also used in Ai6WIN engine (and possibly in Ai5WIN) by Silky.
-If you want to work with Silky Engine's .mes scripts, use mesScriptAsseAndDisassembler instead.
+Dual languaged (rus+eng) GUI tool for packing and unpacking archives of Silky Engine. It is not the same arc as used in Ai6WIN and AI5WIN. For AI6WIN .arc archives use AI6WINArcTool instead, for AI5WIN's use AI5WINArcTool! If you want to work with Silky Engine's .mes scripts, use mesScriptAsseAndDisassembler instead.
 
 Why this tool was created, if there are other tools that can work with this type of archive?
 The answer is simple: because there was no actually good enough tools. One tool can only extract the data, other -- only
@@ -80,13 +78,11 @@ Python).
 1. Run the tool (main.py or .exe).
 2. Print filename (with extension!!!) or choose it by clicking on button "...".
 3. Print directory or choose it by clicking on button "...".
-4. Print "0", if thou want to unpack, or "1", if thou want to pack.
+4. Push the button pack or "Unpack" to "Pack" or unpack.
 5. Just wait until it done.
 """,
         'rus': """
-Двуязычное средство (рус+англ) для распаковки и запаковки архивов Silky Engine. Сей вид архива также используется в
-движке Ai6WIN (и, возможно, в Ai5WIN) от Silky. Ежели вам нужно работать со скриптами .mes Silky Engine, используйте
-mesScriptAsseAndDisassembler.
+Двуязычное средство (рус+англ) для распаковки и запаковки архивов Silky Engine. Не стоит путать его с разновидностями .arc, используемым в AI6WIN и AI5WIN. Для них используйте другие средства: AI6WINArcTool и AI5WINArcTool соответственно! Ежели вам нужно работать со скриптами .mes Silky Engine, используйте mesScriptAsseAndDisassembler.
 
 Почему же это средство было создано, ежель и так есть средства, что могут работать с сим типом архива? Ответ прост: ни
 одно из тех существующих средств не является достаточно хорошим. Одно может только извлекать, другое -- только
@@ -97,10 +93,11 @@ mesScriptAsseAndDisassembler.
 реализации алгоритма сжатия на Python).
 
 >>> Использование.
+
 1. Запустите пакет средств (main.py иль .exe).
 2. Введите имя архива (с расширением!!!) или выберите его, нажав на кнопку "...".
 3. Введите имя директории файлов или выберите его, нажав на кнопку "...".
-4. Введите "0", коли распаковать желаете, али "1", коли запаковать желаете.
+4. Нажмите на кнопку, соответствующую желаемому действию ("Распаковать" и "Запаковать").
 5. Ждите завершения.
 """
     }
