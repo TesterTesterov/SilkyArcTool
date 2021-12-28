@@ -11,25 +11,27 @@ Why this tool was created, if there are other tools that can work with this type
 
 # Usage
 ## English
-![image](https://user-images.githubusercontent.com/66121918/147122698-36aa4d55-3d18-43ee-a86d-f2d73367be86.png)
+![image](https://user-images.githubusercontent.com/66121918/147558252-c813dc1b-a3b7-45bf-a701-e85a68d6266e.png)
 1. Run the tool (main.py or .exe).
 2. Print filename (with extension!!!) or choose it by clicking on button "...".
 3. Print directory or choose it by clicking on button "...".
-4. Push the button pack or "Unpack" to "Pack" or unpack.
+4. Push the button pack or "Unpack archive" to "Pack archive" or "Pack archive (without compression)" or unpack.
 5. Just wait until it done.
 
 ## Русский
-![image](https://user-images.githubusercontent.com/66121918/147131060-480cdf33-33dd-4ffa-9aa5-035962923512.png)
+![image](https://user-images.githubusercontent.com/66121918/147558230-702f168c-7209-41c3-9b36-781f667f08f3.png)
 1. Запустите пакет средств (main.py иль .exe).
 2. Введите имя архива (с расширением!!!) или выберите его, нажав на кнопку "...".
 3. Введите имя директории файлов или выберите его, нажав на кнопку "...".
-4. Нажмите на кнопку, соответствующую желаемому действию ("Распаковать" и "Запаковать").
+4. Нажмите на кнопку, соответствующую желаемому действию ("Распаковать архив", "Запаковать архив" и "Запаковать архив (без сжатия)").
 5. Ждите завершения.
 
 # Tested on:
 
 ## On English
 - [Hikari no Umi no Apeiria \~Casablanca no Kishi\~](https://vndb.org/v21857).
+- [Kimagure Temptation 18+ Patch](https://vndb.org/r84708).
 
 ## На русском
 - [Апейрия живописных морей: Рыцари Касабланки](https://vndb.org/v21857).
+- [Соблазнение по прихоти: 18+ патч](https://vndb.org/r84708).
