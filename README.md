@@ -11,11 +11,11 @@ Why this tool was created, if there are other tools that can work with this type
 
 # Usage
 ## English
-![image](https://user-images.githubusercontent.com/66121918/147558252-c813dc1b-a3b7-45bf-a701-e85a68d6266e.png)
+![image](https://user-images.githubusercontent.com/66121918/147558363-f100541f-9555-41cf-9154-1a39d5da9991.png)
 1. Run the tool (main.py or .exe).
 2. Print filename (with extension!!!) or choose it by clicking on button "...".
 3. Print directory or choose it by clicking on button "...".
-4. Push the button pack or "Unpack archive" to "Pack archive" or "Pack archive (without compression)" or unpack.
+4. Push the button pack or "Unpack archive" to "Pack archive" or "Pack archive (no compression)" or unpack.
 5. Just wait until it done.
 
 ## Русский
