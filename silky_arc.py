@@ -16,7 +16,7 @@ from silky_lzss import SilkyLZSS
 class SilkyArc:
     name_encoding = "cp932"
 
-    def __init__(self, arc: str, dir: str, verbose: bool = True, integrity_check: bool = False):
+    def __init__(self, arc: str, dir: str, verbose: bool = True, integrity_check: bool = False, compress=True):
         """Parameters:
 arc: name of the archive file,
 dir: name of the directory,
@@ -26,6 +26,7 @@ verbose: False (no progress messages) or True (enable progress messages)."""
 
         self._verbose = verbose
         self._integrity_check = integrity_check
+        self._compress = compress
 
         self._names = []
         # 0 -- name length, 1 -- name, 2 -- compressed in lzss size, 3 -- size after lzss decompression,
@@ -81,7 +82,8 @@ verbose: False (no progress messages) or True (enable progress messages)."""
 
     # Unpacking methods.
 
-    def _read_header(self, filer) -> int:
+    @staticmethod
+    def _read_header(filer) -> int:
         return struct.unpack('I', filer.read(4))[0]
 
     def _unpack_names(self) -> list:
@@ -150,7 +152,10 @@ verbose: False (no progress messages) or True (enable progress messages)."""
 
                 with open(rel_name, 'rb') as this_file:
                     this_bytes = this_file.read()
-                encrypted_bytes = self.lzss_compress(this_bytes)
+                if self._compress:
+                    encrypted_bytes = self.lzss_compress(this_bytes)
+                else:
+                    encrypted_bytes = this_bytes
 
                 temp_file.write(encrypted_bytes)
 

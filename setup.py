@@ -9,8 +9,7 @@ if (sys.platform == 'win32'):
 
 executables = [cx_Freeze.Executable("main.py",
                                     shortcut_name="SilkyArcTool",
-                                    shortcut_dir="SilkyArcTool",
-                                    base="Win32GUI")]
+                                    shortcut_dir="SilkyArcTool")]
 
 cx_Freeze.setup(
         name="SilkyArcTool",

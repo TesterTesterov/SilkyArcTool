@@ -37,6 +37,7 @@ class SilkyArcToolGUI:
             "Directory name not stated.",
             "Error",
             "Help",
+            "Pack archive (no compression)"
         ),
         'rus': (
             "SilkyArcTool от Tester-а",
@@ -58,6 +59,7 @@ class SilkyArcToolGUI:
             "Имя директории не указано.",
             "Ошибка",
             "Справка",
+            'Запаковать архив (без сжатия)'
         )
     }
 
@@ -78,7 +80,7 @@ Python).
 1. Run the tool (main.py or .exe).
 2. Print filename (with extension!!!) or choose it by clicking on button "...".
 3. Print directory or choose it by clicking on button "...".
-4. Push the button pack or "Unpack" to "Pack" or unpack.
+4. To unpack push the button "Unpack archive", to pack -- "Pack archive" or "Pack archive (no compression)".
 5. Just wait until it done.
 """,
         'rus': """
@@ -97,7 +99,7 @@ Python).
 1. Запустите пакет средств (main.py иль .exe).
 2. Введите имя архива (с расширением!!!) или выберите его, нажав на кнопку "...".
 3. Введите имя директории файлов или выберите его, нажав на кнопку "...".
-4. Нажмите на кнопку, соответствующую желаемому действию ("Распаковать" и "Запаковать").
+4. Нажмите на кнопку, соответствующую желаемому действию ("Распаковать архив", "Запаковать архив" и "Запаковать архив (без сжатия)").
 5. Ждите завершения.
 """
     }
@@ -179,6 +181,14 @@ Python).
             )
             new_btn.lang_index = 12 + i
             self._action_btns.append(new_btn)
+        new_btn = tk.Button(
+                master=self._bottom_frame,
+                background="white",
+                font=("Helvetica", 14),
+                command=self._pack_uncompressed,
+            )
+        new_btn.lang_index = 19
+        self._action_btns.append(new_btn)
 
         self._help_btn = tk.Button(
             master=self._bottom_frame,
@@ -198,8 +208,9 @@ Python).
             widget_list[0].place(relx=0.0, rely=0.2 * num, relwidth=1.0, relheight=0.1)
             widget_list[1].place(relx=0.0, rely=0.1 + 0.2 * num, relwidth=0.8, relheight=0.1)
             widget_list[2].place(relx=0.8, rely=0.1 + 0.2 * num, relwidth=0.2, relheight=0.1)
-        for num, widget in enumerate(self._action_btns):
-            widget.place(relx=0.0, rely=0.4 + 0.2 * num, relwidth=1.0, relheight=0.2)
+        self._action_btns[0].place(relx=0.0, rely=0.4, relwidth=1.0, relheight=0.2)
+        self._action_btns[1].place(relx=0.0, rely=0.4 + 0.2, relwidth=1.0, relheight=0.1)
+        self._action_btns[2].place(relx=0.0, rely=0.4 + 0.3, relwidth=1.0, relheight=0.1)
         self._help_btn.place(relx=0.0, rely=0.8, relwidth=1.0, relheight=0.2)
         self._bottom_frame.place(relx=0.0, rely=0.2, relwidth=1.0, relheight=0.8)
 
@@ -248,13 +259,23 @@ Python).
             showwarning(title=can_i[0], message=can_i[1])
             return
         packing_thread = threading.Thread(daemon=False, target=self._pack_this_archive,
-                                          args=(self._arc_name.get(), self._dir_name.get()))
+                                          args=(self._arc_name.get(), self._dir_name.get(), True))
         packing_thread.start()
 
-    def _pack_this_archive(self, arc_name, dir_name) -> None:
+    def _pack_uncompressed(self) -> None:
+        """Pack archive with uncompressed data."""
+        can_i = self.which_problems_i_have()
+        if can_i:
+            showwarning(title=can_i[0], message=can_i[1])
+            return
+        packing_thread = threading.Thread(daemon=False, target=self._pack_this_archive,
+                                          args=(self._arc_name.get(), self._dir_name.get(), False))
+        packing_thread.start()
+
+    def _pack_this_archive(self, arc_name, dir_name, compression) -> None:
         try:
             self.lock_activity()
-            arc_archive = SilkyArc(arc_name, dir_name, verbose=True, integrity_check=False)
+            arc_archive = SilkyArc(arc_name, dir_name, verbose=True, integrity_check=False, compress=compression)
             arc_archive.pack()
         except Exception as e:
             showerror(self._strings_lib[self._language][17], str(e))
